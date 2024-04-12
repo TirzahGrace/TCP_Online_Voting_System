@@ -25,6 +25,7 @@ gcc 21CS10071_vclient.c -o client
 ## Note:
 - Run the server and Client in seperate Terminals.
 - Ensure that the server is running before you run the client.
+- Ensure that all the clients are closed, before Exiting from server.
 
 ## Author:
 - Tirzah Grace Y (21CS10071)
