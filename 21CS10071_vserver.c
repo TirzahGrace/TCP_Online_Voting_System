@@ -118,7 +118,7 @@ int main()
                 // printf("size: %d\n", size);
                 for(i=0; i< size; i++)
                 {
-                	if(strlen(input) >= strlen(Vote_Info_Table->entity[i])) {
+                	if(strlen(input) == strlen(Vote_Info_Table->entity[i])) {
                     if(strncmp(Vote_Info_Table->entity[i], input, strlen(input)) == 0 )
                     {
                         present = 1;
@@ -150,6 +150,7 @@ int main()
                 // printf("size: %d\n", size);
                 for(i=0; i< size; i++)
                 {
+                	if(strlen(input) == strlen(Vote_Info_Table->entity[i])) {
                     if(strncmp(Vote_Info_Table->entity[i], input, strlen(input)) == 0 )
                     {
                         present = 1; int j;
@@ -161,6 +162,7 @@ int main()
                         (*table_size) = size - 1 ;
                         break;
                     }
+                	}
                 }
                 if( present == 0) {
                     printf("Entity %s Not present.\n", input);
