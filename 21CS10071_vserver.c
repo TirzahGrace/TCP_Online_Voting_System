@@ -218,7 +218,7 @@ int main()
                     close(new_sock_fd);
                     exit(EXIT_FAILURE);
                 }
-                buffer[bytes] = '\0';
+                buffer[strlen(buffer)] = '\0';
                 if(strncmp(buffer,"-ERR",4) == 0)
                 {
                     close(new_sock_fd);
@@ -228,8 +228,9 @@ int main()
                 int done = 0;
                 for(i=0; i<size; i++)
                 {
-                    if(bytes == strlen(Vote_Info_Table->entity[i])) {
-                    if(strncmp(Vote_Info_Table->entity[i], buffer, bytes) == 0 )
+                    // printf("buffer: %s (%lu) , table:%s (%lu)\n",buffer, strlen(buffer),Vote_Info_Table->entity[i], strlen(Vote_Info_Table->entity[i]));
+                    if(strlen(buffer) == strlen(Vote_Info_Table->entity[i])) {
+                    if(strncmp(Vote_Info_Table->entity[i], buffer, strlen(buffer)) == 0 )
                     {
                         Vote_Info_Table->votes[i]++;
                         memset(&buffer,0,sizeof(buffer));
