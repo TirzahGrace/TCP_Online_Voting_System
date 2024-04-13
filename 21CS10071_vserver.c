@@ -20,7 +20,10 @@ struct vote_info {
     char entity[MAX_ENTITIES][ENTITY_SIZE];
     int votes[MAX_ENTITIES];
 };
-
+int max (int a, int b){
+    if(a>b) return a;
+    return b;
+}
 int main()
 {
     int vote_req;
@@ -118,7 +121,7 @@ int main()
                 // printf("size: %d\n", size);
                 for(i=0; i< size; i++)
                 {
-                    if(strncmp(Vote_Info_Table->entity[i], input, strlen(input)) == 0 )
+                    if(strncmp(Vote_Info_Table->entity[i], input, max(strlen(input), strlen(Vote_Info_Table->entity[i]))) == 0 )
                     {
                         present = 1;
                         break;
