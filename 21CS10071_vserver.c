@@ -228,6 +228,7 @@ int main()
                 int done = 0;
                 for(i=0; i<size; i++)
                 {
+                    if(bytes == strlen(Vote_Info_Table->entity[i])) {
                     if(strncmp(Vote_Info_Table->entity[i], buffer, bytes) == 0 )
                     {
                         Vote_Info_Table->votes[i]++;
@@ -241,6 +242,7 @@ int main()
                             }
                         done = 1;
                         break;
+                    }
                     }
                 }
                 if(done == 0)
